@@ -63,7 +63,7 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  "data-[active=true]:text-primary data-[active=true]:font-medium"
                 )}
                 color="foreground"
                 href={item.href}
@@ -72,6 +72,16 @@ export const Navbar = () => {
               </NextLink>
             </NavbarItem>
           ))}
+          <Link
+            href="/login"
+            className={clsx(
+              linkStyles({ color: "foreground" }),
+              "data-[active=true]:text-primary data-[active=true]:font-medium"
+            )}
+            color="foreground"
+          >
+            Login
+          </Link>
         </ul>
       </NavbarContent>
 
@@ -80,15 +90,13 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-        
+        {/* <Button className="color-warning">Logout</Button> */}
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-       
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
@@ -106,13 +114,14 @@ export const Navbar = () => {
                       ? "danger"
                       : "foreground"
                 }
-                href="#"
+                href={item.href}
                 size="lg"
               >
                 {item.label}
               </Link>
             </NavbarMenuItem>
           ))}
+          <Link href="/login">Login</Link>
         </div>
       </NavbarMenu>
     </NextUINavbar>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const productionUrl = "https://chatbackend-teal.vercel.app/api"
-const developmentUrl = "http://localhost:4000/api"
+const developmentUrl = "http://localhost:4000/api" 
 
 
 const API_URL = process.env.NODE_ENV == "production" ? productionUrl: developmentUrl; 
