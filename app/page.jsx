@@ -18,7 +18,7 @@ export default function Home() {
 
         fetchProducts();
     }, []);
-  
+   
   return (
     <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
   {products.map((item, index) => (
