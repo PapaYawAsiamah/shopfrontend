@@ -1,3 +1,5 @@
+import { Toaster } from "sonner";
+
 export default function LoginLayout({
   children,
 }: {
@@ -6,6 +8,7 @@ export default function LoginLayout({
   return (
     <section >
       <div>
+        <Toaster/>
         {children}
       </div>
     </section>
