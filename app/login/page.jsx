@@ -7,10 +7,12 @@ import { useMutation } from "react-query";
 import { login } from "@/utils/api";
 import { useAtom } from "jotai";
 import { toast } from "sonner";
+import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter()
 
   const [state, setState] = useState(false);
 
@@ -24,6 +26,7 @@ export default function LoginPage() {
       console.log("Logged in successfully", data);
       toast.success("login Succesfull");
       // Redirect to a protected route or perform any other action
+      router.push('/')
     } catch (error) {
       console.log(error);
       setState(false);
